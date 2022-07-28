@@ -11,4 +11,4 @@ This includes all the files and the actual code of my recreational content and L
 3. In place of a word, we can actually give a *file* that contains the words. It actually looks up all the words and saves 
 the meanings of all of them in the current location.
 
-![Smart Dictionary](https://github.com/[vidyadhar24]/[Python_home]/blob/[main]/images/samrt_dict.jpg?raw=true)
+![Smart Dictionary](https://github.com/[vidyadhar24]/[Python_home]/blob/[main]/images/smart_dict.jpg?raw=true)
