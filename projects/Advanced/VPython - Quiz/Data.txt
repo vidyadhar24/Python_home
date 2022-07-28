@@ -1,0 +1,694 @@
+Q. What is a 'Key Word' in a programming language?
+A. There are certain words in every language that are used to meet with specific functionality.
+There are known as 'Key words'. These can't be resued for naming any identifiers (variables) by the programmer..
+
+Q. Is python a Compilied Language or a Interpreted one?
+A. In case of CPython, which is the one widely used, it is compilied. But this part is hidden from the user so chances are high
+to think of this as an 'Interpreted Language'. First the written code is converted into the 'ByteCode' and then using Python Virtual Machine, it is Implemented..
+
+Q.Is Python logic Dynamically typed?
+A. Yes. A Variable can simply be declared without using its datatype
+Ex: Name = 'Rakesh'..
+
+Q.Is there a prominance of First Class Objects in python?
+A. Yes, there is. The functios and classes in python are First class functions
+An Object is a first class object when it can be
+1. Assigned to a variable
+2. Passed as an argument ot a function
+3. Return from a function..
+
+Q What is PEP8?
+A. Python Enhancement Proposal * are a set of rules that when followed promptly make the code easily readable and understandable by others.
+Ex. PEP8 Suggests to use meaningful lower case word while declaring a variable.
+Ex: counter = 0 ..
+
+Q. What are the Recommened Naming Conventions to follow in python?
+A. Variables,Methods and Functions : lower_snake_case 
+   Classes : PascalCase
+   Constants : UPPER_SNAKE_CASE..
+
+Q. What are the namespaces in python?
+A. Name is kind of a virtual area an object is entitled to when created. This also explaines the scope of objects in python 
+There are four. (Can be remembered as LEGB)
+1. Local  (Local to the function the object is part of)
+2. Enclosing (Accessable to the immediate outer function it is part of)
+3. Global (Accessable to the all logic in the code)
+4. Builtin (The built-ins accessable to all entities)..
+
+Q. What is the differenct between sys.exit(0)  and sys.exit(1)?
+A. Most of the languages in the linux env,when executed successfully return with an exit code of 0 by default.
+But if there is an issue, the return code will be a non-zero. So we can make use of this to explicitly mention to exit with code 1
+when is condition to hint at the issue..
+
+Q. what is the difference between '.py' and '.pyc' codes?
+A. .py is the acutal python code where as .pyc is the bytecode of the python code.
+to see the bytecode of a python code, simply execute in the cmd
+python -m pycomile script_name.py -> it won't execute the script, but just saves the bytecode in the current dir..
+
+Q. What are 'literals' in python?
+A. A literal is character or set of characters assigned to a variable, being enclosed in single / double quotes or a number itself
+ex : couter = 0 ; tree = 'Mango'
+Note: When we assign  existing function to a variable, we don't enclose that in quotes, as that is not a literal, but First class object
+ex: calculate_2 = calculate
+NOTE: Also 'True' and False are Key words in python, arguably they are known as 'Boolean Literals' as well..
+
+Q. How to comment in python?
+A. There are two ways
+1. use '#' at the beginnig
+2. use triple quotes ''' text ''' (These are also known as docstrings)..
+
+Q. What is the difference between an expression and a statement?
+A. Expressions are the instructions made up of operators and values that evaluate to a single value. A value can be a variable (which contains a value) or a function call (which returns a value). So, 2 + 2 is an expression that evaluates down to the single value of 4. But len(myName) > 4 and myName.isupper() or myName == 'Zophie' are expressions as well. A value by itself is also an expression that evaluates to itself.
+
+Statements are, effectively, all other instructions in Python. These include if statements, for statements, def statements, return statements, and so on. Statements do not evaluate to a value. Some statements can include expressions, such as an assignment statement like spam = 2 + 2 or an if statement like if myName == 'Zophie': ..
+
+Q. What is Garbage Collection?
+A. In many early programming languages, a programmer had to instruct the program to allocate and then deallocate, or free, memory for data structures as needed. Manual memory allocation was the source of numerous bugs, such as memory leaks (where programmers forgot to free memory) or double-free bugs (where programmers freed the same memory twice, leading to data corruption).
+To avoid these bugs, Python has garbage collection, a form of automatic memory management that tracks when to allocate and free memory so the programmer doesn't have to. You can think of garbage collection as memory recycling, because it makes memory available for new data..
+
+Q. What is an Object?
+A. An object is a representation of a piece of data, such as a number, some text, or a more complicated data structure, such as a list or dictionary. All objects can be stored in variables, passed as arguments to function calls, and returned from function calls.
+All objects have a value, identity, and data type...
+
+Q. What is an Identity?
+A. An object is created with an identity that is a unique integer you can view by calling the id() function.
+Ex : name = 'Rishi'
+>> id(name)
+45748115  -- identity of the object name
+Once created, an object's identity won't change for as long as the program runs. Although the data type and the object's identity will never change, an object's value can change.
+NOTE. running methods on an objects won't change it's identity, but a newer assignment would do. So name = 'Kushal' would have a different Id..
+
+Q. What is copy by reference in python?
+A. Whenever we declare a variable, we don't assgin the object, but the refernce.
+Ex: list = [1,2,3,4]
+new_list = list
+Both of these refer to the same reference and hence will have the same identity / id. This is copy by reference.
+This isn't an issue for immutable values like integers, strings, and tuples..
+
+Q. What is the difference between == and is in python?
+A. is --> looks for the identity of the objects, meaning if both have the same references.(equivalent to id(obj1) == id(obj2))
+== --> looks of the equality of the values..
+
+Q. What is an item in python?
+A. In Python, an object that is inside a container object, like a list or dictionary, is also called an item or an element. For example, the strings in the list ['dog', 'cat', 'moose'] are objects but are also called items..
+
+Q. What is Mutable and Immutable in python?
+A. If you can change the object's value, it's a mutable object. If you can't change its value, it's an immutable object.
+Mutable   : List,Dictionaries,Sets,Bytearray,Array
+ImMutable : Integer,Floating,Boolean,String,Frozen set,Bytes,Tuple 
+
+Here, changing the values refers to adding or removing from the existing value, not a new assignment altogether.
+Explanation: fruits = ['Mango','Apple'] | fruits.append('Kiwi') --> changing the value (fruits still has the same 'id'), Hence MUTABLE
+            fruit = 'Mango' | fruit = 'Apple' --> New Assignment, Hence Immutable (both will have different 'id's).
+Note that Though we can slice a string, that won't change the string inplace..
+
+Q. Are Tupple mutable in python?
+A. By and large, Tuple are considered 'Immutable' in python as thier values(sequence objects) can't be modified in place.
+But a mutable list inside an immutable tuple can still be modified in place. So, we can call is as an exeeption to the general rule that tuples
+are immutable, because if a tuple contains a mutable object and that object changes its value that is, if the object mutates the value of the tuple also changes..
+
+Q. What is an index?
+A. Python lists and dictionaries are values that can contain multiple other values. To access these values, you use an index operator, which is composed of a pair of square brackets ([]) and an integer called an index to specify which value you want to access and it starts with '0'
+Python also supports negative indexes, where -1 refers to the last item in a list, -2 refers to the second-to-last item..
+
+Q. What is a hash and its relavance to a dictionary?
+A. A hash is an integer that is unique. An Objects hash doesn't change for its lifetime. we often assoicate the hash with the values of an object.
+Ex: fruit = 'Mango' | >>if(fruit) ; 14521457 | >> hash(fruit) ; 456465465616165
+Only Immutable objects such as strings,tuples,integers are hashable.
+A hash is different from an identity. Two different objects with the same value will have different identities but the same hash
+Ex: fruit = 'Mango' | fruit_2 = 'Mango' | id(fruit) == id(fruit) ; False | hash(fruit) == hash(fruit) ; True
+The key's hash is used to find items stored in a dictionary and set data structures. That is the reason only hashable objects such as strings,tuples,floats are used as keys for dictionaries.That's why you can't use a mutable list for a dictionary's keys.Note that a tuple is hashable if it contains only hashable items, but not an unhashable list as a key..
+
+Q. What is a container?
+A. In Python, a container is an object of any data type that can contain multiple other objects. Lists and dictionaries are common container types used in Python..
+
+Q. What is a sequence?
+A. A sequence is an object of any container data type with ordered values accessible through integer indexes. Strings, tuples, lists, and bytes objects are sequence data types. Objects of these types can access values using integer indexes in the index operator (the [ and ] brackets) and can also be passed to the len() function. By "ordered," we mean that there is a first value, second value, and so on in the sequence.
+That is the reason, two differently ordered sequenct objects with same values are not the same.
+>>> [1, 2, 3] == [3, 2, 1]
+False..
+
+Q. What is a mapping?
+A. A mapping is an object of any container data type that uses keys instead of an index. A mapping can be ordered or unordered. Dictionaries in Python 3.4 and earlier are unordered because there is no first or last key-value pair in a dictionary, But All Python 3.7 interpreters support ordered dictionaries, which became standard in the Python language in 3.7. But just because a dictionary is ordered doesn't mean that its items are accessible through integer indexes.
+But whether Unordered or Ordered, dictionaries are  considered the same if they contain the same key-value pairs, even if the key-value pairs are in a different order in each dictionary.
+>>> {'a': 1, 'b': 2, 'c': 3} == {'c': 3, 'a': 1, 'b': 2}
+True
+Note: The collections module contains many other mapping(Ordered / Unordered) types, including OrderedDict, ChainMap, Counter, and UserDict ..
+
+Q. What is a dunder or magin method in python?
+A. Dunder methods, also called magic methods, are special methods in Python whose names begin and end with two underscores. These methods are used for operator overloading. Dunder is short for double underscore. The most familiar dunder method is __init__() (pronounced "dunder init dunder," or simply "init"), which initializes objects..
+
+Q. What is the difference between a module and and a package? 
+A. A module is a Python program that other Python programs can import so they can use the module's code. The modules that come with Python are collectively called the Python Standard Library, but you can create your own modules as well. If you save a Python program as, for example, spam.py, other programs can run import spam to access the spam.py program's functions, classes, and top-level variables.
+A package is a collection of modules that you form by placing a file named __init__.py inside a folder and all the modules of that folder / packages becomes accessable to a python's program. You use the folder's name as the name of the package. Packages can contain multiple modules (that is, .py files) or other packages (other folders containing __init__.py files).
+In layman understanding, we can associate module with a - file and a package with a -- folder..
+
+Q. What is and a package?
+A. A package is a collection of modules that you form by placing a file named __init__.py inside a folder. You use the folder's name as the name of the package. Packages can contain multiple modules (that is, .py files) or other packages (other folders containing __init__.py files)..
+
+Q. What is and a module?
+A. A module is a Python program that other Python programs can import so they can use the module's code. The modules that come with Python are collectively called the Python Standard Library, but you can create your own modules as well. If you save a Python program as, for example, spam.py, other programs can run import spam to access the spam.py program's functions, classes, and top-level variables..
+
+Q. what is python standard library?
+A. A module is a Python program that other Python programs can import so they can use the module's code. The modules that come with Python are collectively called the Python Standard Library.
+Ex: time,os,datetime,sys etc., ..
+
+Q. What is PIP in python?
+A. PIP is a package manager in python. In versions 3.4 or later, PIP is included by default.
+There is an online repository from where one can install the readily available modules into thier code. That is known as 'Pypi / Python 
+Package Index' available @ https://pypi.org. The modules are developed by the community. The Python Package Index (PyPI) is a repository of software for the Python programming language
+Ex: pip install jupyter | pip uninstall jupyter..
+
+Q. What is a clause and body in python?
+A. block begins with indentation and ends when that indentation returns to the previous indent level. For example, the code that follows an if or for statement is called the statement's block. But, The official Python documentation prefers the term clause rather than block. Hence the followign example.
+if name == 'Zophie':
+    print('Hello, kitty!')
+    print('Do you want a treat')
+all three lines of code - if clause, The if statement is the clause header, and the two print() calls nested in the if are the clause suite or body..
+
+Q. what is a block?
+A. The official Python documentation uses block to refer to a piece of Python code that executes as a unit, such as a module, a function, or a class definition..
+
+Q. What is the difference between a variable and an attribute?
+A. Variables are simply names that refer to objects. Attributes are, to quote the official documentation, "any name following a dot".
+Attributes are associated with objects (the name before the dot/period).
+Ex: >>> spam = datetime.datetime.now()
+>>> spam.year
+2018
+Here, span is variable referring to an object being returned from a datatime object and year is an attribute of that object.
+Note: when we say any name following a dot",  Methods are also considered attributes of the objects they're associated with..
+
+Q. What is a variable?
+A. Variables are simply names that refer to objects. Since the python the dynamically typed, one needn't explicitly mention the data type while
+declaring a variable.
+Ex: open_flg = 'Yes' ..
+
+
+Q. What is an attribute?
+A. Attributes are, to quote the official documentation, "any name following a dot".Attributes are associated with objects (the name before the dot/period).
+Ex: >>> spam = datetime.datetime.now()
+>>> spam.year
+2018
+Here, span is variable referring to an object being returned from a datatime object and year is an attribute of that object..
+
+Q. What is the difference between a Function and a Method?
+A. A function is a collection of code that runs when called. A method is a function (or a callable) that is associated with a class, just as an attribute is a variable associated with an object. Functions include built-in functions or functions associated with a module.
+Ex: >>> len('Hello')  -- length is an inbuilt FUNCION.
+5
+>>> 'Hello'.upper()  -- A method of the class str object.
+'HELLO'
+>>> import math
+>>> math.sqrt(25)  -- sqrt() is funtion, but not a method, as it is associated with a module, but not a class.
+5.0
+Note that a period doesn't necessarily mean you're dealing with a method instead of a function.If it is a module we are working on, it
+would be funtion, not a method(as in sqrt above)..
+
+Q. What is the difference between an iterable and an iterator in python?
+A. Iterable is an object that be looped over. An Iterator is an object that can be looped and remembers the positions during
+the iterations.To put is simply, Iterable has the dunder method '__iter__' and an iterator has both "__iter__" and '__next__'.
+one can pass the object to 'next' function to see if it is an iterable or iterator.
+Iterables also include all sequence types, such as range, list, tuple, and string objects, but also some container objects, such as dictionary, set, and file objects
+NOTE: You can create as many iterator objects as you want; each will independently track the next item it should return..
+
+Q. Q. What is an iterable?
+A. Iterable is an object that be looped over. 
+To put is simply, Iterable has the dunder method '__iter__'.
+Iterables include all sequence types, such as range, list, tuple, and string objects, but also some container objects, such as dictionary, set, and file object..
+
+Q. Q. What is an iterator?
+A. An Iterator is an object that can be looped and remembers the positions during
+the iterations.To put is simply, Iterable has the dunder method '__iter__' and an iterator has both "__iter__" and '__next__'.
+one can pass the object to 'next' function to see if it is an iterable or iterator..
+
+Q. What is a Syntax error?
+A. Syntax is the set of rules for the valid instructions in a given programming language. A syntax error, such as a missing parenthesis, a period instead of a comma, or some other typo will immediately generate a SyntaxError. Syntax errors are also known as parsing errors, which occur when the Python interpreter can't parse the text of the source code into valid instructions. In English, this error would be the equivalent of having incorrect grammar or a string of nonsense words like, "by uncontaminated cheese certainly it's." Computers require specific instructions and can't read the programmer's mind to determine what the program should do, so a program with a syntax error won't even run..
+
+Q. What is a run time error?
+A. A runtime error is when a running program fails to perform some task, such as trying to open a file that doesn't exist or dividing a number by zero. In English, a runtime error is the equivalent of giving an impossible instruction like, "Draw a square with three sides." If a runtime error isn't addressed, the program will crash and display a traceback. But you can catch runtime errors using try-except statements that run error handling code. For example, enter the following into the interactive shell:..
+
+Q. What is a semantic error?
+A. semantic error (also called a logical error) is a more subtle bug. Semantic errors won't cause error messages or crashes, but the computer carries out instructions in a way the programmer didn't intend.
+Ex: >>  print('The sum of 4 and 2 is', '4' + '2')
+The sum of 4 and 2 is 42.
+Obviously, 42 isn't the answer. But notice that the program won't crash. Because Python's + operator adds integer values and concatenates string values, mistakenly using the string values '4' and '2' instead of integers caused unintended behavior..
+
+Q. What are the few most popular modules from the Python Standard Library?
+A. Python Starndard Module contains the modules that come inbuilt with python.
+Few of the most popular are : os, time, sys, pathlib, string, datetime, getpass, configparser etc., ..
+
+Q. Can python be used to build Windows based applications?
+A. Yes, very much. Along with the popular third party choices like pyqt5, there is an inbuilt python library 'tkinter' to build
+web based applications in python..
+
+Q. Can python be used to build Web based applications?
+A. Yes. Though Javescript is most widely used for web based applications, Python can build them.
+The useful libraries to build web applicaitons are : Django, Flask etc ., ..
+
+Q. Can python be used to build Mobile based applications?
+A. Though Jave is preferred to build mobile applicaitons, it is possible to build mobile applications in python.
+The most common library used for this is : Kiv ..
+
+Q. How do you print the current day or time in python?
+A. First import the datetime library and then use the method datetime.datetime.now() or datetime.datetime.today() to get 
+the complete day and time as a result ..
+
+Q. What are the most common data types built into python?
+A. The most common ones are: String, List, Tuple, Dictionary, Set, Numbers(Int,Float,Complex), Boolean ..
+
+Q. What is slicing in python?
+A. Few of the data structures in python are sequences, which mean the items inside them are ordered. It helps in accessing the elements
+one at a time or few at a time. Since the slicing often happens within the index operator, the syntax would be [5:10:2].
+The syntax is as follows: [start:stop:step], the step is 1 by default..
+
+Q. What is pycache folder, that we oftern see created in the working directory?
+A. To put is simply, when there is a new non-inbuilt module imported, the byte code of these modules is saved in this directory, for faster
+loading the next time. Everytime the script is run, it updates the files in this directory, with the changes as well if any.
+When a module is imported for the first time (or when the source file has changed since the current compiled file was created) a .pyc file containing the compiled code should be created in a __pycache__ subdirectory of the directory containing the .py file. The .pyc file will have a filename that starts with the same name as the .py file, and ends with .pyc, with a middle component that depends on the particular python binary that created it..
+
+Q. How to list the environment variables in python?
+A. Import the module 'os'. and use the following code.
+for item in dict(os.environ).items():
+    print(item) ..
+
+Q. How to set an environment variable in python?
+A. Import the module 'os', and pass the locations.
+Ex: os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64" ..
+
+Q. Explain few types of arguments in python functions?
+A. 1. Positional arguments : The function calls the values from the positions of the arguments.
+Ex: def add(name,class):
+   pass
+   add('Kushal',5) --> Here the Value Kushal will be called to the paramter name, because of its position.
+
+   2. Keyword arguments: Here, the values will be explicitly mentioned by naming the parameters they are being assigned to.
+Ex: def add(name,class):
+   pass
+   add(name='Kushal',class=5)
+
+   3. Default arguments : Here the an argument need not be passed and default is already set for the same.
+   But, incase a new argument is passed, it overwrites the default value.
+   Ex: def add(name,class=5):
+   pass
+   add('Kushal')  --> the class will by default be 5 and if a new value 9 is passed, that becomes the main argument..
+
+Q. What is a positional argument?
+A. 1. Positional arguments : The function calls the values from the positions of the arguments.
+Ex: def add(name,class):
+   pass
+   add('Kushal',5) --> Here the Value Kushal will be called to the paramter name, because of its position..
+
+Q. What is a key word argument?
+A.  Keyword arguments: Here, the values will be explicitly mentioned by naming the parameters they are being assigned to.
+Ex: def add(name,class):
+   pass
+   add(name='Kushal',class=5)..
+
+Q. What is a Default/optional arguement?
+A. Here the an argument need not be passed and default is already set for the same.
+   But, incase a new argument is passed, it overwrites the default value.
+   Ex: def add(name,class=5):
+   pass
+   add('Kushal')  --> the class will by default be 5 and if a new value 9 is passed, that becomes the main argument..
+
+Q. What to update the values of a dictionary ?
+A. a = {'a':1,'b':2}
+A. b = {'a':5,'b':40}
+a. update({a:5})  --> updates just a value
+a. update({'a':5,'b':40})  --> updates all the values.
+if the keys don't exist, adds them ..
+
+Q. How to add elements of a list to the values of an existing dictionary?
+A. [i:j for i,j in zip(dict,list)] --> adds the items in the list to the keys of dict.
+But this only works when the size of the dict and list are same.
+Note that zip() not only just works with lists, but also with other iterables..
+
+Q. What is a zip function?
+A. zip(iter1,iter2,iter3) functions takes n number of iterables and creates an iterable zip object out of it.
+it takes the first element of all the given arguments and creates a tuple out of it.
+The no of tuples (combinatios) will depend on the lowest sized argument given. ie., if iter1 has only 2 elements, but the 
+others have 19,34 .. then the zip object will have only two tuples. 
+The arguments can be an iterables like list, dicts, tuples, string etc.,
+in case of dict, the tuple cantain the keys.
+Ex:
+list_ = [1,2,3,4,5,6,7,8,9]
+tuple_= ('a','b','c','d')
+str_ = 'abdhss'
+
+for item in zip(list_,str_):
+    print(item)
+# Result
+# (1, 'a')
+# (2, 'b')
+# (3, 'd')
+# (4, 'h')
+# (5, 's')
+# (6, 's') ..
+
+Q. What is the difference between list.append() and list.extend()?
+A. append() methods adds the element as it is.
+extend() method extends the existing list by including the elements.
+Ex: list.append([1,3,4]) --> [1,3,4] will be part of the list as a single element, as a list.
+list.extend([1,2,3]) --> extends the list elements by including three elements 1,2,3 , making the length increase by 3..
+
+Q. What is a generator in python?
+A. A generator is containter of sequential elements, but doesn't store the same in the memory when it is created.
+In contrast to a list, generators don't take as much memory and takes relatively lesser time to execute.
+There are two ways of creating a generator.
+1. When we create a function, use 'yield' in placeo f 'return'
+Ex: a generator to return squared elements.
+def square_gen(nums):
+    for item in nums:
+        yield (item * item)
+2. using the comprehension - just use paranthesis ()
+Ex: square_gen2 = (item * item for item in [3,5,6,7])
+print(square_gen2)
+whether it is a function or comprehension, the retunrd object is a gen obj.
+as in <generator object <genexpr> at 0x0000017F22F27148>
+we can loop through this object or convert this other container.
+Note that Generators are 'Iterators' i.e., they remember the position while being looped through
+for i in square_gen2:
+    print(i)
+   #9
+   #25
+   #36
+   #49 ..
+
+Q. How to read a csv in python?
+A. we can import csv module and just using one method csv.reader(file,delimiter), we can read the content.
+the defalut delimiter is ','
+import csv
+
+with open('kagglesurvey.csv') as file:
+    csv_reader = csv.reader(file,delimiter=",")
+
+# print(csv_reader)
+# <_csv.reader object at 0x01446338>
+# print(type(csv_reader))
+# <class '_csv.reader'>
+    for item in csv_reader:
+        print(item)
+# ['9310', '', '', 'Technology', '']
+# ['9311', '', '', 'Academic', '']
+# ['9312', 'Python,TensorFlow', '', 'Technology', 'CNNs']
+As it can be seen, the line being printed is a list. So,using the index, we can get any column info..
+
+Q. How to write to csv in python?
+A. Using just two steps, we can write to csv.
+csv.write(file,delimiter)
+csv.writerow(list) --> it works both for header and the content.
+the defalut delimiter is ','
+
+import csv  
+
+header = ['name', 'area', 'country_code2', 'country_code3']
+data = ['Madagascar', 547845, 'MD', 'MGC']
+
+with open('countries.csv', 'w', encoding='UTF8') as f:
+    csv_writer = csv.writer(f,delimiter='|')
+    csv_writer.writerow(header)
+    csv_writer.writerow(data)
+we can loop through a container of lists to write all that data into a csv..
+
+Q. Write the code for find the factiorial using recursion in Python?
+A. number = int(input("Enter the no: "))
+
+def factorial(n):
+    if n == 1:
+        return n
+    else:
+        return n * factorial(n-1)
+    
+print(factorial(number)) ..
+
+Q. Write the code for find the fibonacci using recursion in Python?
+A. number = int(input("Enter the no: "))
+
+def feb(n):
+   if n <= 1:
+       return n
+   else:
+       return(feb(n-1) + feb(n-2))
+
+print(feb(number)) ..
+
+Q. What are the list methods available in Python?
+A. 
+append() Adds an element at the end of the list
+clear()  Removes all the elements from the list
+copy()   Returns a copy of the list
+count()  Returns the number of elements with the specified value
+extend() Add the elements of a list (or any iterable), to the end of the current list
+index()  Returns the index of the first element with the specified value
+insert() Adds an element at the specified position
+pop()    Removes the element at the specified position (default being -1)
+remove() Removes the first item with the specified value (takes VALUE,not Index)
+reverse()Reverses the order of the list (same as list[::-1])
+sort()   Sorts the list
+Note that all the methods alter the lists in place
+NOTE: When we use the list.insert(2,'A') -> it adds the 'A' at index 2 and MOVES all the subsequest elements by one position.
+It doesn't replace the item..
+
+Q. Does the insert method on a list replace the element at the given index?
+A. No; When we use the list.insert(2,'A') -> it adds the 'A' at index 2 and MOVES all the subsequest elements by one position.
+It doesn't replace the item..
+
+Q. When we apply a method on a list object like list_a.insert(2,'B'), does it change the value in place?
+A. Yes, All the list methods change the original lists in place..
+
+Q. When we apply a method on a string object like str_object.upper(), does it change the value in place?
+A. No, All the String method won't the values of the original strings in place. 
+if that is required, we should assign a new variable for storing the result after applying the method..
+
+Q. How to copy a list that doesn't change when the original list changes it values?
+A. lists are mutable, meaning when there is created a new instance out of this, it still references to the original items and thus both are one and the same in the memory.
+but, to create a new copy of the list, with a new location, use :list.copy()..
+
+Q. Give few useful methods available on strings in Python?
+A.
+center() Returns a centered string
+count()  Returns the number of times a specified value occurs in a string
+endswith()  Returns true if the string ends with the specified value
+find()   Searches the string for a specified value and returns the position of where it was found
+index()  Searches the string for a specified value and returns the position of where it was found
+join()   Joins the elements of an iterable to the end of the string
+ljust()  Returns a left justified version of the string
+lower()  Converts a string into lower case
+replace()   Returns a string where a specified value is replaced with a specified value
+rfind()  Searches the string for a specified value and returns the last position of where it was found
+split()  Splits the string at the specified separator, and returns a list
+splitlines()   Splits the string at line breaks and returns a list
+startswith()   Returns true if the string starts with the specified value
+strip()  Returns a trimmed version of the string
+title()  Converts the first character of each word to upper case
+upper()  Converts a string into upper case
+zfill()  Fills the string with a specified number of 0 values at the beginning ..
+
+Q. Give few useful methods available on strings that can be used to filter the values in Python?
+A.
+isalnum()   Returns True if all characters in the string are alphanumeric
+isalpha()   Returns True if all characters in the string are in the alphabet
+isdecimal() Returns True if all characters in the string are decimals
+isdigit()   Returns True if all characters in the string are digits
+isidentifier() Returns True if the string is an identifier
+islower()   Returns True if all characters in the string are lower case
+isnumeric() Returns True if all characters in the string are numeric
+isupper()   Returns True if all characters in the string are upper case ..
+
+
+Q. what is the isidentifier() string method's use?
+A. identifier can be understood as the naming convention of a variable.
+So, an identifier:
+1. contains only alphabets and numbers and an underscore _
+2. cannot cantain spaces
+3. can not start with a number
+var = "proper_variable_name"
+var.isidentifier()
+True ..
+
+
+Q. How to split a string in Python?
+A. use the string.split() method to split the string by the delimiter. Since it splits the string into multiple elements,
+the result will be a list.
+Ex : data_string = 'scripting is all about logic,littel about syntax'
+data_string.split() # is equivalent to data_string.split(" ") default one being a space.
+['scripting', 'is', 'all', 'about', 'logic,littel', 'about', 'syntax']
+
+Split takes in two params.
+data_string.split(" ",2)
+
+# 1. " " the character to split by
+# 2. 2 number of seperatations it should be split, i.e., the result 
+# will be 2 + one elements long.
+['scripting', 'is', 'all about logic,littel about syntax'] ..
+
+Q. How to split a string by newlines in Python?
+A. splitlines() is used to do this.
+Ex: 
+new_string = " content at first line \n content at second line" 
+
+print(new_string.splitlines())
+print(len(new_string.splitlines()))
+#[' content at first line ', ' content at second line']
+#2
+splitlines is equivalent to split() by new line
+print(new_string.split("\n"))
+#[' content at first line ', ' content at second line'] ..
+
+Q. What are the methods available on tuples in Python?
+A. 
+count()  Returns the number of times a specified value occurs in a tuple
+index()  Searches the tuple for a specified value and returns the position of where it was found
+ids = (1,2,3,4,5,6,7,8,8,8,9)
+ids.count(8)
+#3
+ids.index(8)
+#7 ..
+
+Q. What are the methods available on a dictionary in Python?
+A. 
+items()  Returns a list containing a tuple for each key value pair
+keys()   Returns a list containing the dictionary's keys
+values() Returns a list of all the values in the dictionary
+pop() Removes the element with the specified key
+popitem()   Removes the last inserted key-value pair
+clear()  Removes all the elements from the dictionary
+copy()   Returns a copy of the dictionary
+fromkeys()  Returns a dictionary with the specified keys and value
+get() Returns the value of the specified key
+setdefault()   Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update() Updates the dictionary with the specified key-value pairs ..
+
+Q. How to use the get() method of a dictionary?
+A. It is meant to return the value of the given key. But if it is not there, we can mention the custom return.
+cals.get('apple')
+52
+cals.get('grapes','not available')
+'not available'
+the second parameter is for what to return when the item to be got is not there in the dict ..
+
+Q. What is the difference between the pop methods available on a dict and a list?
+A. At both places, they are used to remove an element from the containers.
+But in list, the pop() functions takes in the INDEX whereas in the dict, it takes in the 'KEY'..
+
+Q. How to find Python executables in the machine?
+A. There are two ways
+1. Go to cmd and type in: where python
+2.start python >> import sys >> sys.executable 
+Both of the above return the locations of the python executables availabe in the machine ..
+
+Q. What is Serialization or Pickling in Python?
+A. When we save something to local file system in python, it is saved as string. 
+We can read the same anytime, but that will be just text as well. 
+But what if, we have to a python specific object like a dictionary and need to read the again in the future as a dictionary only. 
+For this purpose we use serialization 
+So it is the process of saving the python specific object in the local fily system so they can read anytime in the future, but still as python specfic object only. 
+If we consider this python specificity as the 'state of object', then the purpose of serialization would be to retain the object's state in the local file system. 
+Not only, this when we have to transfer the data between technologies like java and python etc., we change the data to mutually understandable format like json. This is serialization as well.SO:
+The process of converting the python supported form into file supported or network supported form is Serialization / Pickling / Marshalling. 
+The other way around is DeSerialization / DePicking / DeMarshalling..
+
+Q. What does the pickle module does in python?
+A. it is used to save  the python specific object in the local fily system so one can read anytime in the future, but still as python specfic object only. 
+If we consider this python specificity as the 'state of object', then the purpose of serialization would be to retain the object's state in the local file system. 
+Not only, this when we have to transfer the data between technologies like java and python etc., we change the data to mutually understandable format like json. This is serialization as well.SO:
+The process of converting the python supported form into file supported or network supported form is Serialization / Pickling / Marshalling. 
+The other way around is DeSerialization / DePicking / DeMarshalling.
+
+>> Pickle.dump(obj,file) 
+To pickle 
+
+>> Obj = pickle.load(file) 
+To depickle ..
+
+Q. How to pickle an object in Python?
+A. 
+>> Pickle.dump(obj,file) 
+To pickle 
+
+>> Obj = pickle.load(file) 
+To depickle ..
+
+Q. How to read json in Python?
+A. we can simply read a json using the load method of the json.
+>> Ditct_obt = Json.loads(json_str) 
+Reads from a json string 
+
+>>Dict_obj = json.load(file) 
+Reads from a json file ..
+
+Q. What is a class variable in Python ?
+A. class variable is when a variable is declared outside the functions of the class but within class itself.
+They are not declared using the 'self' keyword and hence can not be modified by an instance of the class.
+When the value of a class variable is changed by the class, it changes for all the instances of the class. This is in contrast
+to an instance variable, which when changed only stays changed for the instance alone..
+
+Q. What is a Class Method in Python ? 
+A. Class method takes in class itself as the argument,not the instance ('cls' by convention) and they are run by the class, not by the instance.
+There are two things to note here.
+1. use '@classmethod' above the function to make it a class method
+2. pass class (cls) as the first argument, not the self, as this method is CLASS method.
+ Other methods of the class which take instance as the arg ('self' by convention) can be run by the instance itself. class method can
+ also be run by the instaces, but it can not change the values of the instance variable. At the same time, these class variables
+ can by used to alter the value of a class variable from an instance itself. Because it taken in class as arg, it can access
+ the class variables and methods, no matter where it is run from.
+ Ex:
+@classmethod
+def set_raise_amt(cls,amt):
+   cls.raise_amt = amt  -- raise_amt is a class method which is for all the instances (as a given raise would apply to all)  
+So when the above is run from an instance, it changes the value of the class variable..
+
+Q. What is a static Method in a class ?
+A. Unlike a class method, static method can not access the class variables or methods.
+1. use '@staticmethod' above the function to make it a static method
+2. Unlike class, there is no compulsory arg to be given here.(neither self nor cls)
+They are run from the class itself and have unique function that doesn't involve the variable or methods of the class..
+
+Q. What is Overloading in Python ?
+A. Overloading refers to 'Operator Overloading' in python. By default, every operator in python like '=' ,'<' have a definite
+rules for its operands to return a proper output. But, to operate with the required kind of operands, we can overwrite its functionality.
+Ex: for two objects, in their classes ,we can chanage the functions - '__add__', or '__eq__' to required code, so they act accordingly
+when given as operand to these operators. This is called 'Overloading' the existing operators..
+
+Q. What is OverWriting in Python ?
+A. This comes into picture when there is inheritance in the play. When two objects/classes share the common the methods, the method
+which is local overwrite the parent one. That is the reason when we inherit, we normally mention in the constructor the following.
+Ex: 
+1. class A(B):
+def __init__(self)
+   super().__init__()  -- here, it means to take all the varibles constructed in the parent class
+2. class A(B):
+def __init__(self)
+   super().apply_increment(amt)  -- here, it is overwriting jus one method from the parent.
+3. class A(B):
+def __init__(self,name,class,school)
+   super().__init__(name)  -- here, it is overwriting jus one attribute from the parent.
+   self.class = class
+   self.school = school ..
+
+Q. What is duck typing in Python?
+A. Duck typing refers : if the object has a method that can be executed, it is executed.
+Since all the items in the Python are objects, no matter if they are assigned to a variable or passed as arg to another object.
+if that object has the method being used, then it calls the method. 
+It comes from the saying, if it looks like a duck, walks like a duch and quacks like a duck it is duck ..
+
+Q. What is the issubclass() ?
+A. It takes in two params and returns True if the first one inherits from the second one.
+Ex: issubclass(Devs,Emps) # True  -- as Emps is the parents class and few of the attribute are inhereted from here to Devs..
+
+Q. What is the isinstace() ?
+A. It takes in two params and returns True if the first one is an instance created from the second class.
+Ex: issubclass(emp1,Emps) # True  -- as emp1 = Emps() ..
+
+Q. What is the difference between issubclass and isinstance methods ?
+A. Just go by the names. 
+Instances are what made out of a  class and they belong to that class 
+Subclasses are those that inherit from the parent class and they belong to the parent. 
+Ex: issubclass(Devs,Emps) # True  -- as Emps is the parents class and few of the attribute are inhereted from here to Devs
+Ex: issubclass(emp1,Emps) # True  -- as emp1 = Emps() ..
+
+Q. How to list the contents of the current directory in Python?
+A. os.listdir(path) -> lists out the content of the path given
+if not path is given, the default is taken as the current directory..
+
+Q, How to open a progrem from within the Python?
+A. Subprocess.popen('path of the app') -> opens the application given its full path..

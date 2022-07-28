@@ -1,0 +1,15 @@
+Compress
+
+Convert jpg to png
+
+Convert png to jpg
+
+apply blur
+
+monochromatic
+
+downscale
+
+open target
+
+make a gif

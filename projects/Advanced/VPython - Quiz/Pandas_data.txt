@@ -1,0 +1,227 @@
+Q. How do you a column in pandas?
+A. we simply call the column name and pass the same to the data frame.
+df = pandas.read_csv('sales.csv')
+df['year']  => will give just the year ..
+
+Q. what is the difference between dataframe.loc and dataframe.iloc ?
+A. First, both of them take two arguments.
+df.iloc[a,b] -> a and b are indices, row and column wise
+df.loc[2,'Gender'] -> 2 from the index,Gender -> column ; Here index is a number , but the same works if index is set to a column name ..
+
+Q. what is dataframe.iloc ?
+A. df.iloc[a,b] -> is a method to access the parts of a dataframe using the indices.
+first arg a is for the row index and second one b for the column index..
+we can also slide the index as in df.iloc[0:5,0:5] --> output will be first five rows and columns
+when we give a single argument like df.iloc[3] - it just fetches the records from the third row ..
+
+Q. what is dataframe.loc ?
+A. df.loc[a,b] -> is a method to access the parts of a dataframe using the names / labels.
+Here, a is the name of the index(will be a non integer if a custom index is set,else will be a number)
+and b is the name of the column.
+slicing can also be made use of. as in df.loc[1:5,'Country']
+when we give a single argument like df.loc['name'] - it just fetches the records from the 'name' column ..
+But the first arg can also be a boolean expression, see below example.
+df.loc[filter,column] --> here we pass the filter as the first arg and the column as the second.
+occupation_filter = (df['Occupation'] == 'Artist')
+df.loc[occupation_filter,'Name'] --> returns the names of the ARTISTs (along with index - as the result is a series)..
+
+Q. What is a series in pandas?
+A. A Series in pandes a collection of records. in layman terms, it can be understood as python list with added functionalities
+one of the key ones is an index ..
+
+Q. How to create a series in Pandas ?
+A. These are the popular ways.
+1. pass a python list to pandas.Series() -- the index will be default,
+2. pass a dictionary to pandas.Series() -- keys of the dictionary become the index..
+3. use two python lists, one for values and other for index as in 
+Ex: ountries_series = pd.Series(Population_list, index = countries_list) ..
+
+
+Q. What is a dataframe in pandas?
+A. A series is a collection of records or rows, where there is one column and multiple rows.
+A dataframe is a collection series. In other words, it is a collection of multiple columns and rows. Hence Dataframes are called two dimensional.
+The data in the data frame is like this.
+A dictionary object with 'column' as key and 'records' as values.
+Ex: Students = {"Names" : ['Ram','Bheem','Shyam'],
+            "Ages" : [10,11,12],
+            "Classes" : [5,6,7]} ..
+
+
+Q. Name the four most useful methods to the get the information of a dataframe in pandas?
+A. df.head()  -- returns the top five records
+df.info() -- gives the complete info about the attributes, along with size
+df.dtypes -- just the datatypes of the each column
+df.columns - just the column names..
+
+Q. How to set and reset index in Pandas?
+A. To set a column as an index, use the following.
+df.set_index('Name')
+To reset index, use df.reset_index()..
+
+Q. What is the difference between a Pandas Series and a Python list?
+A. A python list can accomodate elements of different data types, where python Series can't.
+
+new_seies = pd.Series('a',1,5,[1,4,5])  -- throws an error
+new_list = ['a',1,5,[1,4,5]] --- works..
+
+Q. How to create conditions or filters in pandas?
+A. we make use of conditional operators(like >, <, ==, etc.,) and create a filter first.
+Then we can use the following two methods to apply the filter.
+1. Passing the filter as first arg to df.loc
+2. pass the filter to the dataframe at once.
+Ex: indian_artists = (df['Country'] == 'India') & (df['Occupation']== 'Artist') # note that we must enclose the individual condition in ()s.
+1. df[indian_artists]  -- gives the complete dataframe that matches the criteria
+2.df.loc[indian_artists,'Name'] -- gives only the names of the artists..
+
+Q. How to find out the null values from a dataframe?
+A. df.isnull().sum()
+df.isnull() --> returns the boolean values which will be them used for sum(1 for True)..
+
+Q. How to find out if a series / column has the null values from a dataframe?
+A. df['Short description'].isnull().values.any() --> returns True / False
+df['Short description'].isnull().values.sum() # to check the no of missing values ..
+
+Q. How to drop the missing values in a dataframe?
+A. df.dropna() is used to remove the missing values row wise. Meaning, if there is a NULL / Np.NaN value in the row, it will be deleted.
+Actually, df.dropna(axis = 'index',how = 'any') is used by default. we can also use axis = 0 for row and 1 for column.
+'any' deletes the row even if there is one NULL value in the row. but, 'all' removes the row only when there NULL values across the row.
+we can also use a subset.The following looks rows wise. if the items in the email and the last contains Nan/None at a time in a row, 
+# it drops that row. 
+df.dropna(axis = 'index', how='all',subset=['email','last'])..
+
+Q. How to fill the NULL values in Pandas?
+A. use df.fillna(0) -- replaces the nulls with 0, we can use strings such 'missing' as well as needed..
+
+Q. how to change the datatype of column / series in Pandas?
+A. df['age'] = df['age'].astype(int64)  --> using the 'astype' method on a series, we can change the datatype..
+
+
+Q. How to replace the null values in Pandas?
+A. df.replace('NA',np.nan,inplace = True)
+df.replace('Missing',np.nan,inplace = True)..
+
+Q. How to see the distince or unique values from a column ?
+A. use the method -> df['Gender'].unique() to list out the unique values from a column..
+
+Q. How to find out the number of unique values in a column?
+A. use the method -> df['Gender'].nunique() to get the number of unique values from a column..
+
+Q. How to rename the columns?
+A. emps.rename(columns = {"N NAMES": "Names","N SALARIES": "Salaries","N DEPTS": "Departments"}, inplace = True)
+ie., df.rename(column ={'old_name':'new_name'}) ..
+
+Q. Can one assign a new value to a record in a dataframe ?
+A. Yes. We can use the navigation options to point to a record or records and the using the assignment operator (=), we can assign new values.
+Ex: emps.loc[0,["Salaries","Departments"]] = [9500,"Technology"]
+emps.loc['Ramesh,'Salaries'] = 7500 --> changes the values in place
+NOTE: if 'Ramesh' won't exist in the index column, then a new record is created with index and Ramesh and Salay as 7500, others as Np.NaN..
+
+Q. What is the use of apply method on a series?
+A. apply function can be used both on a series and a data frame.
+So, what is basically does in a series is, if takes each element in a column and applies the logic to that. But it won't Change the values in
+place. we have assign the returnted obejct to a new object for the new output.
+It can take as an argument the following.
+1. An inbulit function like 'len'  --> so it returns the lenght of the each element in a column
+2. user created functions
+3. lambda expressions
+
+But applying the "apply" to a dataframe only applies largest available individual item - columnwise
+Ex: min() returns the minimum or alphabetical item from the each column
+emps.apply(lambda x: x.min()) ..
+
+Q. What is the use of applymap method in Pandas?
+A. It works on all the elements inside a dataframe.
+Ex: emps.applymap(type) reveals the dataype of all the elements in the df..
+
+Q. What is the use of map method in Pandas?
+A. It is only applied on a series and is used to replace the values of a series.
+Ex: emps["Names"].map({"Stuart": "Stu","Manson":"Man"})
+But the caveat is that it also changes all the other values to Np.NaN, in this case, all the other names.
+And it won't change the values in place..
+
+Q. What is the use of replace method in Pandas?
+A. It is only applied on a series and is used to replace the values of a series.
+Ex: emps["Names"].replace({"Peter": "pete","Bruce":"Bru"},inplace = True)
+But unlike the map method, it leaves the other values in the column intact..
+
+Q. What are the methods map,applymap,replace,apply in Pandas?
+A. apply,map,replace are only to be used with series objects where as the applymap can be used on a dataframe.
+All of there are used to apply certain functionality to the elements inside the data objects.
+and of the four, only replace has the argument to make the changes take place in place. (i.e.,inplace=True)..
+
+Q. How to set the index while reading the file itself?
+A. we can use the keyword 'index_col' and pass the column name to be used as index.
+Ex: salaries = pd.read_csv('Salaries.csv',index_col = "Id")..
+
+Q. How to add a new column to a dataframe?
+A. There are two ways most widely used.
+1. Pass the list with the same lenght of the size as the dataframe is
+Ex: df['flag'] = ['Y','N','N','Y'] -> works only when the length of the dataframe is four
+2. creating a column from the existing ones.
+Ex: salaries['ExtraPay'] = salaries['OtherPay'] + salaries['OvertimePay']..
+
+Q. How to drop a column from a dataframe?
+A. use the drop method and pass the column names.
+Ex: # inplace = True deleles forever
+salaries.drop(columns= ['Notes', 'ExtraPay'],inplace=False)..
+
+Q. Can we append a dataframe to another one?
+A. Yes, but it can only happen when structure is same in both the dfs.ie., both the dfs should have the same column names.
+use the method df.append(df2)..
+
+
+Q. How to drop a row from a dataframe?
+A. we can drop a row using the index.
+# inplace = False
+new_df.drop(index=0) ..
+
+Q. how to use the condional dropping in Pandas?
+A. first create a filter and use the drop method to pass the matching indices for deletion.
+# condtional dropping
+filt = (new_df['Salaries'] < 5000 )
+new_df.drop(index=new_df[filt].index) ..
+
+Q. How to sort by a dataframe in Pandas?
+A. df.sort_values(by='Names',ascending = False, inplace = True)
+we can also sort by index --> df.sort_index()..
+
+Q. How to sort by a column in Pandas?
+A. df['Names'].sort_values() ..
+
+Q. How to sort by mulitple columns of a dataframe in Pandas?
+A. df.sort_values(by=['Names','Salaries'], ascending = [False,False], inplace = True)..
+
+Q. How to crate a groupby object in Pandas?
+A. grp_country = df.groupby('Country')  # note that it is df.groupby not pd.groupby
+By default, it won't retrun anything as it is just a pandas groupby object.
+But we can access the elements of a group, by calling the get_group method,
+Ex: grp_country = df.groupby('Country')..
+
+Q. How to use the item being group by for a conclusion?
+A. When we group by a column and we apply a method to make the result a series, then the grouped by column
+becomes the index. so, using the .loc method, we can do addition functions.
+Ex: occupation_grp['Country'].value_counts().loc['Artist'] # Occupation is what is grouped by here..
+
+Q. what does the value_counts() do in Pandas?
+A. Value_counts() is a method available for a series  and on dataframe. it just groups the items in the series and gives the counts
+and for a data frame, it just groups the unique combinations and gives the results..
+
+Q. An example of using a string method?
+A. Ex:  df.loc[filt]['LanguageWorkedWith'].str.contains('Python|python').sum()
+df.loc[filter] --> always returns the series with boolean values. Hence we use the sum to add the Trues..
+
+Q. How to concat two data frames?
+A. First of all, to add two data frames together column wise, their indices must be the same.
+Then we can use the pd.concat to do the thing.
+new_df = pd.concat([total_no,python_ppl],axis = 'columns')..
+
+Q. what are the values does the dropna method drop?
+A. df.dropna() method considers both 'None' and Np.NaN or NaN values as missing or null values and drops them..
+
+Q. What is dropna() method in Pandas?
+A. df.dropna(axis = 1,thresh = 2) axis 0 for row, 1 for index. thresh = 2 refers to not deleting if there are  2 nulls  in a row,
+So only one null records are deleted..
+
+
+Q. what does the counts() do in Pandas?
+A. It counts the no of Non-NaN values and gives the count column wise in the data frame..

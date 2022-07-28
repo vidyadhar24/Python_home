@@ -1,0 +1,6 @@
+To be implemented 
+1. Dictionary
+
+2. NLP : Analyse
+
+use self.bind

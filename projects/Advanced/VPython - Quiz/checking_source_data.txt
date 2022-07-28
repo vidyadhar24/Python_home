@@ -1,0 +1,97 @@
+    class Welcome_Window(tk.Tk):
+
+        def __init__(self) -> None:
+            super().__init__()
+            self.geometry("450x150")
+            self.resizable(False, False)
+            self.title("The Application is launching")
+            # self.geometry('+400+100')
+
+            self.label = tk.Label(self, text="The Application is launching, \n Please Wait while the sources are being refreshed",
+                                  font=("Helvetica", 12, 'bold'))
+            self.label.place(relx=0.05, rely=0.3)
+            self.button = tk.Button(
+                self, width=20, height=2, text="Updating", command=self.close_window)
+            self.button.place(relx=0.35, rely=0.72)
+
+            self.tables_to_be_updated = []
+
+        def check_sources(self):
+            logger.info(f'Checking for the sources data updated...')
+            self.config_reader = ConfigParser()
+            self.config_reader.read("DB_Data/sources.ini")
+            self.source = self.config_reader['sources']
+            self.sources = {table: timpstp for table,
+                            timpstp in self.source.items()}
+            sources_prev_time = [src for src in self.sources.values()]
+            sources_paths = [r"I:\Do\Vings\python__\projects\Advanced\VPython - Quiz 2.0\Data.txt",
+                             r"I:\Do\Vings\python__\projects\Advanced\VPython - Quiz 2.0\Pandas_data.txt",
+                             r"I:\Do\Vings\python__\projects\Advanced\VPython - Quiz 2.0\Etymology.txt"]
+            latest_timpstms = [str(os.path.getmtime(path))
+                               for path in sources_paths]
+            self.sources_latest_time = {key: value for key, value in zip(
+                self.sources, latest_timpstms)}  # zip also works with dict, just takes their keys
+
+            not_mathcing_tmpstmp = [i for i, j in zip(
+                sources_prev_time, latest_timpstms) if i != j]
+
+            self.tables_to_be_updated = []
+            for table, tmstp in self.sources.items():
+                for mismatch in not_mathcing_tmpstmp:
+                    if tmstp == mismatch:
+                        self.tables_to_be_updated.append(table)
+            if self.tables_to_be_updated:
+                logger.info(
+                    f'Table(s) : {self.tables_to_be_updated} are udpated recently')
+            else:
+                logger.info(f'No recent update for any of the tables found')
+            return self.tables_to_be_updated
+
+        def update_records(self):
+            new_recs = qa_injestion.get_updated_recs(self.tables_to_be_updated)
+            if new_recs[1]:
+                logger.info(
+                    f'Data Injestion is successful with {new_recs[1]} record(s)')
+            else:
+                logger.info(
+                    f'No New Records but the data has been udpated Successfully for tables: {self.tables_to_be_updated}')
+
+        def update_timestamps(self):
+            for table, tmstp in self.sources_latest_time.items():
+                if table in self.tables_to_be_updated:
+                    self.source[table] = tmstp
+            with open("DB_Data/sources.ini", 'w') as conf:
+                self.config_reader.write(conf)
+
+        def close_window(self):
+            self.destroy()
+
+        def update_button(self):
+            self.button.configure(text='Loaded Now!')
+
+    welcome_window = Welcome_Window()
+    # welcome_window.mainloop()
+    tables_to_be_updated = welcome_window.check_sources()
+
+    if not tables_to_be_updated:
+        logger.info(
+            f'Calling main funtion directly as no updates found for the tables')
+        welcome_window.close_window()
+        # Start the app straight away when there are no tables to be updated
+        app = GUI()
+        app.mainloop()
+
+    # update the db with the source data and get the no of new recs added, if any
+    else:
+        # welcome_window.mainloop()
+        logger.info(
+            f'Updating the database as the there are updates for table(s): {tables_to_be_updated}')
+        welcome_window.update_records()
+        welcome_window.update_timestamps()
+        welcome_window.update_button()
+        welcome_window.update()
+        logger.info(f'Welcome window is now closed after the injestion')
+        logger.info(
+            f'Calling the main function after the sucessful injestion of new records')
+        app = GUI()
+        app.mainloop()

@@ -1,0 +1,14 @@
+A session specific quiz to check the knowledge with the following features.
+
+1. There will be two options to start with
+    - To just start off the quiz with a default / manually input questions per session
+    - To Revise from the saved sessions (Spaced Repetition)
+    So, Three Modes: Random, Repeat or Ask
+
+2. After each session, will show the result
+     - Percentage of pass / fail
+     - Time taken
+        - overall
+        - avg per each question
+3. Use Postgres to read / write the data
+4. Create one more to store the read

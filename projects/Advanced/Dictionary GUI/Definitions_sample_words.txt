@@ -1,0 +1,192 @@
+rhetoric
+--------
+Type:  noun
+Definition:  the art of effective or persuasive speaking or writing, especially the exploitation of figures of speech and other compositional techniques.
+Example:  he is using a common figure of rhetoric, hyperbole
+-----------------------------------------------------------------------
+===============================================================================
+
+cringe
+------
+Type:  noun
+Definition:  an act of cringing.
+-----------------------------------------------------------------------
+Type:  verb
+Definition:  bend one's head and body in fear or apprehension or in a servile manner.
+Example:  he <b>cringed away</b> from the blow
+-----------------------------------------------------------------------
+===============================================================================
+
+binge
+-----
+Type:  verb
+Definition:  indulge in an activity, especially eating, to excess.
+Example:  she <b>binged on</b> ice cream
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a period of excessive indulgence in an activity, especially drinking alcohol or eating.
+Example:  he <b>went on a binge</b> and was in no shape to drive
+-----------------------------------------------------------------------
+===============================================================================
+
+good
+----
+Type:  adjective
+Definition:  to be desired or approved of.
+Example:  it's good that he's back to his old self
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  having the required qualities; of a high standard.
+Example:  a good restaurant
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  possessing or displaying moral virtue.
+Example:  her father was a good man
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  giving pleasure; enjoyable or satisfying.
+Example:  the streets fill up with people looking for a good time
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  thorough.
+Example:  now is the time to have a really good clear-up
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  valid.
+Example:  the ticket is good for travel from May to September
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  that which is morally right; righteousness.
+Example:  a mysterious balance of good and evil
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  benefit or advantage to someone or something.
+Example:  he convinces his father to use his genius <b>for the good of</b> mankind
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  merchandise or possessions.
+Example:  imports of luxury goods
+-----------------------------------------------------------------------
+Type:  adverb
+Definition:  well.
+Example:  my mother could never cook this good
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  used in conjunction with the name of God or a related expression as an exclamation of extreme surprise or anger.
+Example:  good heavens!
+-----------------------------------------------------------------------
+===============================================================================
+
+bad
+---
+Type:  adjective
+Definition:  lacking or failing to conform to moral virtue.
+Example:  the bad guys
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  (of a part of the body) injured, diseased, or painful.
+Example:  a bad back
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  (of food) decayed; putrid.
+Example:  everything in the fridge went bad
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  regretful, guilty, or ashamed about something.
+Example:  working mothers who feel bad about leaving their child
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  worthless; not valid.
+Example:  he ran up 87 bad cheques
+-----------------------------------------------------------------------
+Type:  adverb
+Definition:  badly.
+Example:  he beat her up real bad
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  of poor quality or a low standard.
+Example:  a bad diet
+-----------------------------------------------------------------------
+Type:  adjective
+Definition:  not such as to be hoped for or desired; unpleasant or unwelcome.
+Example:  bad news
+-----------------------------------------------------------------------
+===============================================================================
+
+sample
+------
+Type:  noun
+Definition:  a small part or quantity intended to show what the whole is like.
+Example:  investigations involved analysing samples of handwriting
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a sound or piece of music created by sampling.
+Example:  piano samples
+-----------------------------------------------------------------------
+Type:  verb
+Definition:  take a sample or samples of (something) for analysis.
+Example:  bone marrow cells were sampled
+-----------------------------------------------------------------------
+===============================================================================
+
+test
+----
+Type:  noun
+Definition:  the shell or integument of some invertebrates and protozoans, especially the chalky shell of a foraminiferan or the tough outer layer of a tunicate.
+-----------------------------------------------------------------------
+Type:  verb
+Definition:  take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.
+Example:  this range has not been tested on animals
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.
+Example:  both countries carried out nuclear tests in May
+-----------------------------------------------------------------------
+===============================================================================
+
+tree
+----
+Type:  noun
+Definition:  a woody perennial plant, typically having a single stem or trunk growing to a considerable height and bearing lateral branches at some distance from the ground.
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a wooden structure or part of a structure.
+-----------------------------------------------------------------------
+===============================================================================
+
+chair
+-----
+Type:  noun
+Definition:  the person in charge of a meeting or of an organization (used as a neutral alternative to chairman or chairwoman).
+Example:  she's the chair of a research committee
+-----------------------------------------------------------------------
+Type:  verb
+Definition:  act as chairperson of or preside over (an organization, meeting, or public event).
+Example:  the debate was chaired by the Archbishop of York
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a separate seat for one person, typically with a back and four legs.
+Example:  he sat down on a chair
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a professorship.
+Example:  he held a chair in physics
+-----------------------------------------------------------------------
+===============================================================================
+
+bench
+-----
+Type:  noun
+Definition:  a judge's seat in a law court.
+Example:  his appointment to the civil bench
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a long seat for several people, typically made of wood or stone.
+Example:  a park bench
+-----------------------------------------------------------------------
+Type:  noun
+Definition:  a long work table in a workshop or laboratory.
+Example:  a 19th-century wheelwright's bench
+-----------------------------------------------------------------------
+===============================================================================
+
