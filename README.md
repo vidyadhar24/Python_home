@@ -4,7 +4,7 @@ This includes all the files and the code of my Learnings and recreational projec
 ### The Following are the few projects made out of curiosity which made me learn a lot about programming and Python.  ###
 ---  
 ## 1. Smart Dictionary ##
-### A Dictionary Application that fetches the meaning of the words in real time, using an API ###
+### A Dictionary Application that fetches the meaning of the words(for all words from a file) in real time, using an API ###
 ### The following are what make it kind of Smarter. ###
 1. It gets all the possible meanings and stores them in a separate window.
 2. It tracks the history and allow the saving of the meanings as well.
