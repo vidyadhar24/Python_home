@@ -1,7 +1,7 @@
 # Python_home #
 This includes all the files and the code of my Learnings and recreational projects
 
-### The Following are the few projects made out of curiosity while learning which made me learn a lot about programming and about Python.  ###
+### The Following are the few projects made out of curiosity which made me learn a lot about programming and Python.  ###
 ---  
 ## 1. Smart Dictionary ##
 ### A Dictionary Application that fetches the meaning of the words in real time, using an API ###
