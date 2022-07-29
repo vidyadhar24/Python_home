@@ -36,8 +36,8 @@ the meanings of all of them in the current location.
 ![Smart Dictionary](images/Slide5.JPG?raw=true)
 
 ---  
-## 1. Advanced image Manipulator ##
-### A Programme that helps in revising the learned ###
+## 1. Practical Flash / Quiz Programme ##
+### A Programme that helps in revising the learned content ###
 ### A Subject can be choosen out of the avaliable and adding a new subject is quite easy to do ###
 ![Smart Dictionary](images/Slide6.JPG?raw=true)
 
