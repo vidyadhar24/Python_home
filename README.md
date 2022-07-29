@@ -31,7 +31,7 @@ the meanings of all of them in the current location.
 1. It processes single or multiple items as once
 2. Compresses the images to the given size
 3. appiles blur of the given amount
-![Smart Dictionary](images/Slide4.jpg?raw=true)
+![Smart Dictionary](images/Slide4.JPG?raw=true)
 4. Shows the metadata of the process at the output
 ![Smart Dictionary](images/Slide5.JPG?raw=true)
 
