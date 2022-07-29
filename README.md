@@ -1,5 +1,5 @@
 # Python_home #
-This includes all the files and the code of my and Learnings recreational projects
+This includes all the files and the code of my Learnings and recreational projects
 
 ### The Following are the few projects made out of curiosity while learning which made me learn a lot about programming and about Python.  ###
 ---  
